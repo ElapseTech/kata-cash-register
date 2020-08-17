@@ -2,6 +2,85 @@
 
 Let's build a cash register! Looks simple? Then let's add some constraints...
 
+## The rules
+
+### Step 1
+
+As you would normally implement it, code the feature `Producing a receipt` and the first scenario of the feature `Pricing`.
+
+_See [here](#the-features) for the list of features_
+
+### Step 2
+
+Reimplement [Step 1](#step-1), but this time with the following constraints:
+* No getter/setter allowed
+* No return values nor _out_ parameters
+
+### Step 3
+
+Add scenarios 2 and 3 of the feature `Pricing` and add the following constraint:
+* Only one level of indentation
+
+### Step 4
+
+Refactor your code to comply with the following constraint:
+* Wrap all primitives and strings
+
+### Step 5
+
+Add the remaining scenarios and add the following constraint:
+* No `if/else` nor `switch/case` in _production_ code
+
+For example, this is not a valid implementation (nor a good design):
+
+```java
+class Product {
+  public Double calculatePriceWithRebate() {
+    if (DiscountType.QUANTITY.equals(this.discountType) && this.quantity >= this.minQuantity) {
+      return (this.unitPrice - this.quantityRebate) * this.quantity;
+    } else if (DiscountType.WEIGHT.equals(this.discountType) && this.weight >= this.minWeight) {
+      return (this.unitPrice - this.weightRebate) * this.weight;
+    }
+  }
+}
+```
+
+### Step 6
+
+Have fun picking additional constraints from the [Object Calisthenics](https://williamdurand.fr/2013/06/03/object-calisthenics/)
+
+_Note: Objects calisthenics are meant to put into **practice** some of the best practices of Object-Oriented Programming. They are **not** meant to be rules to follow in production code._
+
+## The alternatives
+
+### Alternative 1
+
+Write all steps above in TDD.
+
+### Alternative 2
+
+Write all steps above in [ping-pong pair-programming](https://martinfowler.com/articles/on-pair-programming.html#PingPong)
+
+### Alternative 3
+
+Write all steps above in [mob programming](https://github.com/willemlarsen/mobprogrammingrpg)
+
+### Alternative 4
+
+Write all steps above in [TCR](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
+
+### Alternative 5
+
+For all the steps above, follow this procedure:
+0. Think of a behavior you have to implement
+1. Start with writing the name of a test to verify that behavior
+2. Start a **2min** timer (yes, 2 minutes 😉)
+3. Implement both the test and the code
+4. Once the timer ends
+    - if the test pass: commit and pick the next behavior
+    - if the test fail: revert your changes and start over
+5. Repeat until a scenario is completed
+
 ## The features
 
 <details>
