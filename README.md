@@ -72,6 +72,7 @@ Write all steps above in [TCR](https://medium.com/@kentbeck_7670/test-commit-rev
 ### Alternative 5
 
 For all the steps above, follow this procedure:
+
 0. Think of a behavior you have to implement
 1. Start with writing the name of a test to verify that behavior
 2. Start a **2min** timer (yes, 2 minutes 😉)
@@ -83,8 +84,7 @@ For all the steps above, follow this procedure:
 
 ## The features
 
-<details>
-  <summary>Producing a receipt</summary>
+### Producing a receipt
 
 ```gherkin
 Feature: Producing a receipt
@@ -104,10 +104,8 @@ Feature: Producing a receipt
     Then the subtotal is 6.20$
     And the total is present
 ```
-</details>
 
-<details>
-  <summary>Pricing</summary>
+### Pricing
 
 ```gherkin
 Feature: Pricing
